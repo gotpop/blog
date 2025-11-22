@@ -1,7 +1,10 @@
 import "server-only"
 
-import { Popover } from "@/Components/Popover/Popover"
 import { FormBuilder } from "@/Components/FormBuilder/FormBuilder"
+import { FormInputButtonSubmit } from "@/Components/FormInputButtonSubmit/FormInputButtonSubmit"
+import { FormInputText } from "@/Components/FormInputText/FormInputText"
+import { FormInputTextArea } from "@/Components/FormInputTextArea/FormInputTextArea"
+import { Popover } from "@/Components/Popover/Popover"
 import {
   withCardsData,
   withFormBuilderData,
@@ -65,6 +68,9 @@ export function ensureStoryblokInitialised() {
     rich_text_block: RichTextBlock,
     rich_text_code_block: RichTextCodeBlock,
     snippet_block: SnippetBlock,
+    form_input_text: FormInputText,
+    form_input_textarea: FormInputTextArea,
+    form_input_button_submit: FormInputButtonSubmit,
   }
 
   storyblokInit({

@@ -1,4 +1,4 @@
-import { PopoverStoryblok, ConfigStoryblok } from "@/types/storyblok-components"
+import { ConfigStoryblok, PopoverStoryblok } from "@/types/storyblok-components"
 import "./Popover.css"
 
 interface PopoverProps {
@@ -8,14 +8,16 @@ interface PopoverProps {
   }
 
 export function Popover({ blok, content, config }: PopoverProps) {
-    console.log("Rendering Popover Component >>>>>>", blok)
+    // console.log("Rendering Popover Component >>>>>>", blok)
     console.log("content >>>>>>", content)
-    console.log("config >>>>>>", config)
+    
+    // console.log("config >>>>>>", config)
 
     return <article popover="auto" id="popover-contact-form" className="popover">
         {/* {blok.content?.map((content) => (
             <StoryblokServerComponent blok={content} key={content._uid} />
         ))} */}
         <h1>Popover Component</h1>
+        {content}
     </article>
 }
