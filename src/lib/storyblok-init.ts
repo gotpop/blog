@@ -1,11 +1,15 @@
 import "server-only"
 
+import { Popover } from "@/Components/Popover/Popover"
+import { FormBuilder } from "@/Components/FormBuilder/FormBuilder"
 import {
   withCardsData,
+  withFormBuilderData,
   withHeaderData,
   withNavData,
   withNotFoundPageData,
   withPageData,
+  withPopoverData,
 } from "@gotpop/storyblok"
 import {
   BaselineStatusBlock,
@@ -30,7 +34,6 @@ import { apiPlugin, getStoryblokApi, storyblokInit } from "@storyblok/react/rsc"
 
 let isInitialized = false
 
-/** Ensures Storyblok is initialized with all registered components. */
 export function ensureStoryblokInitialised() {
   if (isInitialized) {
     return getStoryblokApi()
@@ -47,6 +50,7 @@ export function ensureStoryblokInitialised() {
     card: Card,
     cards: withCardsData(Cards),
     footer_default: FooterDefault,
+    form_builder: withFormBuilderData(FormBuilder),
     header_default: withHeaderData(HeaderDefault),
     hero_default: HeroDefault,
     link_list: LinkList,
@@ -56,6 +60,7 @@ export function ensureStoryblokInitialised() {
     not_found: withNotFoundPageData(PageNotFound),
     page_default: withPageData(PageDefault),
     page_filter: withPageData(PageFilter),
+    popover: withPopoverData(Popover),
     page_post: withPageData(PagePost),
     rich_text_block: RichTextBlock,
     rich_text_code_block: RichTextCodeBlock,
