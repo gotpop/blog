@@ -1,4 +1,7 @@
-import { ConfigStoryblok, FormBuilderStoryblok } from "@/types/storyblok-components"
+import type {
+  ConfigStoryblok,
+  FormBuilderStoryblok,
+} from "@/types/storyblok-components"
 import "./FormBuilder.css"
 
 interface FormBuilderProps {
@@ -8,10 +11,5 @@ interface FormBuilderProps {
 }
 
 export function FormBuilder({ blok, content }: FormBuilderProps) {
-  return (
-    <form className="form-builder">
-      {content}
-    </form>
-  )
+  return <form className="form-builder">{content}</form>
 }
-

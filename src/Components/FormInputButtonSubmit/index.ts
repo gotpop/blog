@@ -1,2 +1,1 @@
-export { FormInputButtonSubmit } from "./FormInputButtonSubmit";
-
+export { FormInputButtonSubmit } from "./FormInputButtonSubmit"

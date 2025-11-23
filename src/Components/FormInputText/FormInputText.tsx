@@ -1,4 +1,7 @@
-import { ConfigStoryblok, FormInputTextStoryblok } from "@/types/storyblok-components"
+import type {
+  ConfigStoryblok,
+  FormInputTextStoryblok,
+} from "@/types/storyblok-components"
 import "./FormInputText.css"
 
 interface FormInputTextProps {
@@ -18,7 +21,11 @@ export function FormInputText({ blok }: FormInputTextProps) {
       {label ? (
         <label htmlFor={id} className="form-input-label">
           {label}
-          {required ? <span aria-hidden className="required-indicator">*</span> : null}
+          {required ? (
+            <span aria-hidden className="required-indicator">
+              *
+            </span>
+          ) : null}
         </label>
       ) : null}
 
@@ -34,4 +41,3 @@ export function FormInputText({ blok }: FormInputTextProps) {
     </div>
   )
 }
-
