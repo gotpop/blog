@@ -1,4 +1,4 @@
-import { FormBuilderStoryblok, ConfigStoryblok } from "@/types/storyblok-components"
+import { ConfigStoryblok, FormBuilderStoryblok } from "@/types/storyblok-components"
 import "./FormBuilder.css"
 
 interface FormBuilderProps {
@@ -7,12 +7,9 @@ interface FormBuilderProps {
   config: ConfigStoryblok | null
 }
 
-export function FormBuilder({ blok, content, config }: FormBuilderProps) {
-  console.log("Rendering FormBuilder Component !!!!!!!!!!!!!", blok)
-
+export function FormBuilder({ blok, content }: FormBuilderProps) {
   return (
     <form className="form-builder">
-      <h1>FormBuilder Component</h1>
       {content}
     </form>
   )

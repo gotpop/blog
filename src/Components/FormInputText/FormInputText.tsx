@@ -7,13 +7,30 @@ interface FormInputTextProps {
   config: ConfigStoryblok | null
 }
 
-export function FormInputText({ blok, content, config }: FormInputTextProps) {
-  console.log("Rendering FormInputText Component !!!!!!!!!!!!!", blok)
+export function FormInputText({ blok }: FormInputTextProps) {
+  const id = `input-${blok._uid}`
+  const label = blok.input_label ?? ""
+  const placeholder = blok.input_placeholder ?? ""
+  const required = !!blok.input_required
 
   return (
-    <div className="form-builder">
-      <h1>FormInputText Component</h1>
-      {content}
+    <div className="form-builder form-input-text">
+      {label ? (
+        <label htmlFor={id} className="form-input-label">
+          {label}
+          {required ? <span aria-hidden className="required-indicator">*</span> : null}
+        </label>
+      ) : null}
+
+      <input
+        id={id}
+        name={blok._uid}
+        type="text"
+        className="form-input-text__field"
+        placeholder={placeholder}
+        required={required}
+        aria-required={required}
+      />
     </div>
   )
 }

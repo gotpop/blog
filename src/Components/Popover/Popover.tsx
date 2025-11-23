@@ -8,16 +8,10 @@ interface PopoverProps {
   }
 
 export function Popover({ blok, content, config }: PopoverProps) {
-    // console.log("Rendering Popover Component >>>>>>", blok)
-    console.log("content >>>>>>", content)
-    
-    // console.log("config >>>>>>", config)
-
-    return <article popover="auto" id="popover-contact-form" className="popover">
-        {/* {blok.content?.map((content) => (
-            <StoryblokServerComponent blok={content} key={content._uid} />
-        ))} */}
-        <h1>Popover Component</h1>
-        {content}
-    </article>
+    return (
+        <article popover="auto" id="popover-contact-form" className="popover">
+            <h1>Get in touch!</h1>
+            {content}
+        </article>
+    )
 }
