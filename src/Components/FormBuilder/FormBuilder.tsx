@@ -10,6 +10,6 @@ interface FormBuilderProps {
   config: ConfigStoryblok | null
 }
 
-export function FormBuilder({ blok, content }: FormBuilderProps) {
+export function FormBuilder({ content }: FormBuilderProps) {
   return <form className="form-builder">{content}</form>
 }

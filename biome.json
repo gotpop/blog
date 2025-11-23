@@ -3,7 +3,7 @@
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": false },
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!**/*.css"]
+		"includes": ["**", "!**/*.css", "!src/types/storyblok-components.ts"]
 	},
 	"formatter": {
 		"enabled": true,
