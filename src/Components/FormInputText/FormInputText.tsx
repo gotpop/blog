@@ -3,6 +3,7 @@ import type {
   FormInputTextStoryblok,
 } from "@/types/storyblok-components"
 import "./FormInputText.css"
+import { useId } from "react"
 
 interface FormInputTextProps {
   blok: FormInputTextStoryblok
@@ -11,7 +12,7 @@ interface FormInputTextProps {
 }
 
 export function FormInputText({ blok }: FormInputTextProps) {
-  const id = `input-${blok._uid}`
+  const id = useId()
   const label = blok.input_label ?? ""
   const placeholder = blok.input_placeholder ?? ""
   const required = !!blok.input_required
@@ -31,8 +32,8 @@ export function FormInputText({ blok }: FormInputTextProps) {
 
       <input
         id={id}
-        name={blok._uid}
-        type="text"
+        name={blok.input_name}
+        type={blok.type || "text"}
         className="form-input-text__field"
         placeholder={placeholder}
         required={required}

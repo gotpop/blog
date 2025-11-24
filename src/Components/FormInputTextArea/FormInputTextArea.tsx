@@ -3,6 +3,7 @@ import type {
   FormInputTextareaStoryblok,
 } from "@/types/storyblok-components"
 import "./FormInputTextArea.css"
+import { useId } from "react"
 
 interface FormInputTextAreaProps {
   blok: FormInputTextareaStoryblok
@@ -11,7 +12,7 @@ interface FormInputTextAreaProps {
 }
 
 export function FormInputTextArea({ blok }: FormInputTextAreaProps) {
-  const id = `textarea-${blok._uid}`
+  const id = useId()
   const label = blok.input_label ?? ""
   const placeholder = blok.input_placeholder ?? ""
   const required = !!blok.input_required
@@ -31,7 +32,7 @@ export function FormInputTextArea({ blok }: FormInputTextAreaProps) {
 
       <textarea
         id={id}
-        name={blok._uid}
+        name={blok.input_name}
         className="form-input-textarea__field"
         placeholder={placeholder}
         required={required}
