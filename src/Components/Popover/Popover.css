@@ -10,6 +10,7 @@
   top: calc(anchor(bottom) + 3rem);
   width: min(90vw, 41rem);
   height: var(--round-up);
+  padding: 0;
 
   &::after {
     background-color: var(--light-100);
@@ -59,7 +60,7 @@
 
 [popover] {
   font-size: 1.2rem;
-  padding: 10px;
+  /* padding: 10px; */
 
   /* Final state of the exit animation */
   opacity: 0;

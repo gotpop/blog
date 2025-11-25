@@ -18,7 +18,7 @@ export function FormInputTextArea({ blok }: FormInputTextAreaProps) {
   const required = !!blok.input_required
 
   return (
-    <div className="form-builder form-input-textarea">
+    <div className="form-input-textarea">
       {label ? (
         <label htmlFor={id} className="form-input-label">
           {label}

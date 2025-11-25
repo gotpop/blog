@@ -1,6 +1,7 @@
-.form-builder {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
+@scope (.form-builder) {
+  & {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-base);
+  }
 }
