@@ -3,6 +3,7 @@ import type {
   FormInputTextareaStoryblok,
 } from "@/types/storyblok-components"
 import "./FormInputTextArea.css"
+import { CustomElement } from "@gotpop/system"
 import { useId } from "react"
 
 interface FormInputTextAreaProps {
@@ -18,17 +19,18 @@ export function FormInputTextArea({ blok }: FormInputTextAreaProps) {
   const required = !!blok.input_required
 
   return (
-    <div className="form-input-textarea">
-      {label ? (
-        <label htmlFor={id} className="form-input-label">
-          {label}
+    <CustomElement tag="form-input-textarea">
+      <label htmlFor={id} className="form-input-label">
+        {/* Text box trim hack */}
+        <p role="presentation">
+          {label}{" "}
           {required ? (
-            <span aria-hidden className="required-indicator">
+            <span aria-hidden className="required-asterisk">
               *
             </span>
           ) : null}
-        </label>
-      ) : null}
+        </p>
+      </label>
 
       <textarea
         id={id}
@@ -38,6 +40,6 @@ export function FormInputTextArea({ blok }: FormInputTextAreaProps) {
         required={required}
         aria-required={required}
       />
-    </div>
+    </CustomElement>
   )
 }
