@@ -7,7 +7,7 @@
   position-area: bottom center;
   position: fixed;
   right: anchor(right);
-  top: calc(anchor(bottom) + 3rem);
+  top: calc(anchor(bottom) + 1rem);
   width: min(90vw, 41rem);
   height: var(--round-up);
   padding: 0;
@@ -29,6 +29,7 @@
     top: -3rem;
     left: calc(50% - 2.5rem);
     width: 5rem;
+    display: none;
     clip-path: shape(
       from 0% 100%,
       /* bottom left */ line to 100% 100%,
