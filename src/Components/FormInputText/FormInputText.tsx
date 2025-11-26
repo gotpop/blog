@@ -3,6 +3,8 @@ import type {
   FormInputTextStoryblok,
 } from "@/types/storyblok-components"
 import "./FormInputText.css"
+import { CustomElement } from "@gotpop/system"
+import { useId } from "react"
 
 interface FormInputTextProps {
   blok: FormInputTextStoryblok
@@ -11,33 +13,34 @@ interface FormInputTextProps {
 }
 
 export function FormInputText({ blok }: FormInputTextProps) {
-  const id = `input-${blok._uid}`
+  const id = useId()
   const label = blok.input_label ?? ""
   const placeholder = blok.input_placeholder ?? ""
   const required = !!blok.input_required
 
   return (
-    <div className="form-builder form-input-text">
-      {label ? (
-        <label htmlFor={id} className="form-input-label">
-          {label}
+    <CustomElement tag="form-input-text">
+      <label htmlFor={id} className="form-input-label">
+        {/* Text box trim hack */}
+        <p role="presentation">
+          {label}{" "}
           {required ? (
-            <span aria-hidden className="required-indicator">
+            <span aria-hidden className="required-asterisk">
               *
             </span>
           ) : null}
-        </label>
-      ) : null}
+        </p>
+      </label>
 
       <input
         id={id}
-        name={blok._uid}
-        type="text"
+        name={blok.input_name}
+        type={blok.type || "text"}
         className="form-input-text__field"
         placeholder={placeholder}
         required={required}
         aria-required={required}
       />
-    </div>
+    </CustomElement>
   )
 }

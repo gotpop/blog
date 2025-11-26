@@ -220,10 +220,10 @@
   dependencies:
     "@storyblok/react" "^5.0.0"
 
-"@gotpop/system@^0.1.186":
-  version "0.1.186"
-  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.186/999706cea026eb436648e5034c6e228b9b640ffd#999706cea026eb436648e5034c6e228b9b640ffd"
-  integrity sha512-7Vv7WmU993OqzubHComqPX3Y2jqixOY8OSW8oYH3/YN1cG76fOUMA2f43vjKfavPvC0ANUggkGElgI1SCHMcwQ==
+"@gotpop/system@^0.1.189":
+  version "0.1.189"
+  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.189/5862651a646529c6565637904df6c5e74f8f62d3#5862651a646529c6565637904df6c5e74f8f62d3"
+  integrity sha512-u4sjjNNWGCmmtBe6vFqcGTAMZVIfW5pfV2iWOoOvxre40Hd2ssCxHyl4JLBp6io/ekD5JXa3NE0dwCdCk+Y3hQ==
   dependencies:
     "@next/font" "^14.2.15"
     "@storyblok/react" "^5.4.18"
@@ -2914,3 +2914,8 @@ yoctocolors-cjs@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/yoctocolors-cjs/-/yoctocolors-cjs-2.1.3.tgz#7e4964ea8ec422b7a40ac917d3a344cfd2304baa"
   integrity sha512-U/PBtDf35ff0D8X8D0jfdzHYEPFxAI7jJlxZXwCSez5M3190m+QobIfh+sWDWSHMCWWJN2AWamkegn6vr6YBTw==
+
+zod@^4.1.13:
+  version "4.1.13"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.1.13.tgz#93699a8afe937ba96badbb0ce8be6033c0a4b6b1"
+  integrity sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==

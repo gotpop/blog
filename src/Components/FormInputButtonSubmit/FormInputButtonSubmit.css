@@ -1,6 +1,24 @@
-.form-builder {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
+@scope (.form-input-button-submit) {
+  & {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-submit-button {
+    height: var(--round-up);
+    padding: 0 1.5rem;
+    font-size: var(--text-base);
+    background-color: var(--accent);
+    color: var(--light-100);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 3rem;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--accent-dark);
+      outline: none;
+    }
+  }
 }

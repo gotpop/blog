@@ -14,7 +14,7 @@ export function FormInputButtonSubmit({ blok }: FormInputButtonSubmitProps) {
   const label = blok.button_text ?? "Send"
 
   return (
-    <div className="div-builder form-input-button-submit">
+    <div className="form-input-button-submit">
       <button type="submit" className="form-submit-button" aria-label={label}>
         {blok.icon_button && blok.icon_button.length > 0 ? (
           <span className="form-submit-button__icon" aria-hidden="true">
