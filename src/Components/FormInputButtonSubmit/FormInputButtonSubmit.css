@@ -5,20 +5,27 @@
   }
 
   .form-submit-button {
-    height: var(--round-up);
-    padding: 0 1.5rem;
-    font-size: var(--text-base);
-    background-color: var(--accent);
-    color: var(--light-100);
+    background-color: var(--primary-200);
     border: none;
+    color: var(--light-100);
     cursor: pointer;
+    font-size: var(--text-base);
+    height: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s;
-    height: 3rem;
+    gap: var(--spacing-base);
+
+    span {
+      display: flex;
+      align-items: center;
+      max-height: 1cap;
+    }
 
     &:hover,
     &:focus-visible {
-      background-color: var(--accent-dark);
-      outline: none;
+      background-color: var(--primary-400);
     }
   }
 }

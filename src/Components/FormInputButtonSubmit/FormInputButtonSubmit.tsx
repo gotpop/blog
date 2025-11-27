@@ -3,6 +3,8 @@ import type {
   FormInputButtonSubmitStoryblok,
 } from "@/types/storyblok-components"
 import "./FormInputButtonSubmit.css"
+import type { IconName } from "@gotpop/system"
+import { Icon } from "@gotpop/system"
 
 interface FormInputButtonSubmitProps {
   blok: FormInputButtonSubmitStoryblok
@@ -13,16 +15,18 @@ interface FormInputButtonSubmitProps {
 export function FormInputButtonSubmit({ blok }: FormInputButtonSubmitProps) {
   const label = blok.button_text ?? "Send"
 
+  const icon =
+    blok.icon_button && blok.icon_button.length > 0
+      ? (blok.icon_button[0].icon_picker as IconName | undefined)
+      : undefined
+
+  const iconMarkup = icon ? <Icon name={icon} size={16} /> : null
+
   return (
     <div className="form-input-button-submit">
       <button type="submit" className="form-submit-button" aria-label={label}>
-        {blok.icon_button && blok.icon_button.length > 0 ? (
-          <span className="form-submit-button__icon" aria-hidden="true">
-            {/* Storyblok icon component(s) are rendered elsewhere — placeholder */}
-          </span>
-        ) : null}
-
-        <span className="form-submit-button__text">{label}</span>
+        <span className="text">{label}</span>
+        {iconMarkup}
       </button>
     </div>
   )
