@@ -38,31 +38,10 @@
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
     "typescript.inlayHints.enumMemberValues.enabled": true,
-    "gitlens.blame.format": "${message|40?} ${agoOrDate|14-}",
-    "gitlens.blame.highlight.enabled": false,
-    "gitlens.blame.ignoreWhitespace": true,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.statusBar.enabled": false,
-    "gitlens.blame.toggleMode": "file",
-    "gitlens.blame.compact": false,
-    "gitlens.defaultDateFormat": null,
-    "gitlens.defaultDateShortFormat": null,
-    "gitlens.blame.separateLines": false,
-    "gitlens.currentLine.format": "",
-    "gitlens.currentLine.scrollable": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.hovers.annotations.enabled": false,
-    "gitlens.hovers.currentLine.enabled": false,
-    "gitlens.blame.avatars": false,
-    "gitlens.blame.dateFormat": null,
-    "gitlens.views.enabled": false,
-    "git.blame.ignoreWhitespace": true,
     "editor.codeLens": false,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "biomejs.biome",
-    "terminal.integrated.enableFileLinks": true,
+    "terminal.integrated.enableFileLinks": "on",
     "terminal.integrated.enableLinks": true,
     "terminal.integrated.copyOnSelection": false,
     "terminal.integrated.rightClickBehavior": "default",
@@ -79,6 +58,7 @@
     },
     "[jsonc]": {
       "editor.defaultFormatter": "biomejs.biome"
-    }
+    },
+    "editor.parameterHints.enabled": false
   }
 }

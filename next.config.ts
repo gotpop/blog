@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@gotpop/system"],
   },
+  images: {
+    domains: ["a.storyblok.com"],
+  },
 }
 
 export default nextConfig
