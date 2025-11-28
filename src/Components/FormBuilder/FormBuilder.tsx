@@ -54,7 +54,10 @@ export async function submitFormAction(formData: FormData) {
     return
   }
 
-  const payload = JSON.stringify(result.data)
+  const payload = JSON.stringify({
+    body: JSON.stringify(result.data),
+  })
+
   const lambda = new LambdaClient({ region: process.env.AWS_REGION })
 
   try {
