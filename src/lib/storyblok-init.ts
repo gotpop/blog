@@ -2,6 +2,7 @@ import "server-only"
 
 import {
   withCardsData,
+  withCardsImageData,
   withFormBuilderData,
   withHeaderData,
   withNavData,
@@ -12,7 +13,9 @@ import {
 import {
   BaselineStatusBlock,
   Card,
+  CardImage,
   Cards,
+  CardsImage,
   FooterDefault,
   HeaderDefault,
   HeroDefault,
@@ -53,6 +56,8 @@ export function ensureStoryblokInitialised() {
     baseline_status_block: BaselineStatusBlock,
     card: Card,
     cards: withCardsData(Cards),
+    card_image: CardImage,
+    cards_with_image: withCardsImageData(CardsImage),
     footer_default: FooterDefault,
     form_builder: withFormBuilderData(FormBuilder),
     form_input_button_submit: FormInputButtonSubmit,
