@@ -49,8 +49,8 @@
     "@types/node": "^20",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "baseline-browser-mapping": "^2.8.32",
     "prettier": "^3.6.2",
-    "raw-loader": "^4.0.2",
     "storyblok": "^4.6.9",
     "storyblok-generate-ts": "^2.2.0",
     "typescript": "^5"
