@@ -1,7 +1,7 @@
 import {
   getAvailableStoriesForError,
   getConfig,
-  getStoryblokData,
+  getInitializedStoryblokApi,
   withNotFoundPageData,
 } from "@gotpop/storyblok"
 import type { NotFoundStoryblok } from "@gotpop/system"
@@ -20,18 +20,23 @@ export default async function NotFound() {
   const prefix = config?.root_name_space || "blog"
   const notFoundPath = `${prefix}/not-found`
 
-  const { data: story, error } = await getStoryblokData("story", {
-    fullPath: notFoundPath,
-  })
+  const storyblokApi = getInitializedStoryblokApi()
 
-  if (story && !error && story.content) {
-    return (
-      <PageNotFoundWithData
-        blok={story.content as NotFoundStoryblok}
-        config={config}
-        availableStories={availableStories}
-      />
-    )
+  try {
+    const response = await storyblokApi.get(`cdn/stories/${notFoundPath}`)
+    const story = response?.data?.story
+
+    if (story?.content) {
+      return (
+        <PageNotFoundWithData
+          blok={story.content as NotFoundStoryblok}
+          config={config}
+          availableStories={availableStories}
+        />
+      )
+    }
+  } catch (error) {
+    console.error(`[NotFound] Failed to fetch story: ${notFoundPath}`, error)
   }
 
   return null
