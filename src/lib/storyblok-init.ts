@@ -38,6 +38,7 @@ import { FormInputButtonSubmit } from "@/Components/FormInputButtonSubmit/FormIn
 import { FormInputText } from "@/Components/FormInputText/FormInputText"
 import { FormInputTextArea } from "@/Components/FormInputTextArea/FormInputTextArea"
 import { Popover } from "@/Components/Popover/Popover"
+import { submitFormAction } from "@/lib/form-actions"
 
 let isInitialized = false
 
@@ -59,7 +60,7 @@ export function ensureStoryblokInitialised() {
     card_image: CardImage,
     cards_with_image: withCardsImageData(CardsImage),
     footer_default: FooterDefault,
-    form_builder: withFormBuilderData(FormBuilder),
+    form_builder: withFormBuilderData(FormBuilder, submitFormAction),
     form_input_button_submit: FormInputButtonSubmit,
     form_input_text: FormInputText,
     form_input_textarea: FormInputTextArea,
