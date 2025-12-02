@@ -7,9 +7,9 @@
 
   .form-message {
     padding: var(--spacing-sm);
-    border-radius: 4px;
     margin-bottom: var(--spacing-base);
     font-size: var(--text-sm);
+    min-height: var(--spacing-md);
   }
 
   .form-message--success {
