@@ -9,10 +9,7 @@ interface FormState {
   success: boolean
 }
 
-export async function submitFormAction(
-  //   prevState: FormState | null,
-  formData: FormData
-): Promise<FormState> {
+export async function submitFormAction(formData: FormData): Promise<FormState> {
   const nameRaw = formData.get("contact-form-name")?.toString() ?? ""
   const emailRaw = formData.get("contact-form-email")?.toString() ?? ""
   const subjectRaw = formData.get("contact-form-subject")?.toString() ?? ""
