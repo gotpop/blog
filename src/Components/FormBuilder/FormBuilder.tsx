@@ -23,23 +23,22 @@ export async function submitFormAction(formData: FormData) {
   const schema = z.object({
     name: z
       .string()
-      .min(1, { error: "Name is required" })
-      .max(100, { error: "Name too long" }),
+      .min(1, { message: "Name is required" })
+      .max(100, { message: "Name too long" }),
     email: z
-      .string()
-      .email({ error: "Invalid email address" })
-      .max(254, { error: "Email too long" }),
+      .email({ message: "Invalid email address" })
+      .max(254, { message: "Email too long" }),
     subject: z
       .string()
-      .min(1, { error: "Subject is required" })
-      .max(200, { error: "Subject too long" }),
+      .min(1, { message: "Subject is required" })
+      .max(200, { message: "Subject too long" }),
     message: z
       .string()
-      .min(1, { error: "Message is required" })
-      .max(1000, { error: "Message too long" })
-      .transform((val: string) =>
-        val.replace(/<[^>]*>/g, "").replace(/[\r\n]+/g, " ")
-      ),
+      .trim()
+      .min(1, { message: "Message is required" })
+      .max(1000, { message: "Message too long" })
+      .transform((val) => val.replace(/<[^>]*>/g, ""))
+      .transform((val) => val.replace(/\s+/g, " ")),
   })
 
   const result = schema.safeParse({
@@ -51,6 +50,7 @@ export async function submitFormAction(formData: FormData) {
 
   if (!result.success) {
     console.log("[FormBuilder] Validation error:", result.error.issues)
+
     return
   }
 
@@ -65,6 +65,7 @@ export async function submitFormAction(formData: FormData) {
       FunctionName: process.env.AWS_LAMBDA_CONTACT_FUNCTION,
       Payload: Buffer.from(payload),
     })
+
     const response = await lambda.send(command)
     const responsePayload = response.Payload
       ? JSON.parse(Buffer.from(response.Payload).toString())
