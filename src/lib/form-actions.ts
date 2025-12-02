@@ -3,7 +3,13 @@
 import { InvokeCommand, LambdaClient } from "@aws-sdk/client-lambda"
 import { z } from "zod"
 
-export async function submitFormAction(formData: FormData) {
+interface FormState {
+  errors: Record<string, string[]>
+  message: string
+  success: boolean
+}
+
+export async function submitFormAction(formData: FormData): Promise<FormState> {
   const nameRaw = formData.get("contact-form-name")?.toString() ?? ""
   const emailRaw = formData.get("contact-form-email")?.toString() ?? ""
   const subjectRaw = formData.get("contact-form-subject")?.toString() ?? ""
@@ -39,7 +45,11 @@ export async function submitFormAction(formData: FormData) {
 
   if (!result.success) {
     console.log("[FormBuilder] Validation error:", result.error.issues)
-    return
+    return {
+      errors: result.error.flatten().fieldErrors,
+      message: "Please fix the errors below",
+      success: false,
+    }
   }
 
   const payload = JSON.stringify({
@@ -60,7 +70,19 @@ export async function submitFormAction(formData: FormData) {
       : null
 
     console.log("[FormBuilder] Lambda response:", responsePayload)
+
+    return {
+      errors: {},
+      message: "Message sent successfully!",
+      success: true,
+    }
   } catch (error) {
     console.error("[FormBuilder] Lambda error:", error)
+
+    return {
+      errors: {},
+      message: "Failed to send message. Please try again.",
+      success: false,
+    }
   }
 }
