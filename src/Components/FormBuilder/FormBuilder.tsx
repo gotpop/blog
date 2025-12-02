@@ -23,13 +23,13 @@ interface FormBuilderProps {
 export function FormBuilder({ content, onSubmit }: FormBuilderProps) {
   const initialState = { errors: {}, message: "", success: false }
 
-  const actionFunction = onSubmit
-    ? async (_: FormState | null, formData: FormData) => {
-        return await onSubmit(formData)
-      }
-    : () => Promise.resolve(initialState)
+  const handleSubmit = async (_: FormState | null, formData: FormData) => {
+    if (!onSubmit) return initialState
 
-  const [state, formAction] = useActionState(actionFunction, initialState)
+    return await onSubmit(formData)
+  }
+
+  const [state, formAction] = useActionState(handleSubmit, initialState)
 
   return (
     <form className="form-builder" action={formAction}>
