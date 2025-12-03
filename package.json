@@ -53,7 +53,7 @@
     "prettier": "^3.6.2",
     "storyblok": "^4.6.9",
     "storyblok-generate-ts": "^2.2.0",
-    "typescript": "^5"
+    "typescript": "~5.0.4"
   },
   "storyblok": {
     "token": "env:STORYBLOK_ACCESS_TOKEN",
