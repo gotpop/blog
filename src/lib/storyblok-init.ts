@@ -17,6 +17,10 @@ import {
   Cards,
   CardsImage,
   FooterDefault,
+  FormBuilder,
+  FormInputButtonSubmit,
+  FormInputText,
+  FormInputTextArea,
   HeaderDefault,
   HeroDefault,
   LinkList,
@@ -28,16 +32,12 @@ import {
   PageNotFound,
   PagePost,
   PagePostImage,
+  Popover,
   RichTextBlock,
   RichTextCodeBlock,
   SnippetBlock,
 } from "@gotpop/system"
 import { apiPlugin, getStoryblokApi, storyblokInit } from "@storyblok/react/rsc"
-import { FormBuilder } from "@/Components/FormBuilder/FormBuilder"
-import { FormInputButtonSubmit } from "@/Components/FormInputButtonSubmit/FormInputButtonSubmit"
-import { FormInputText } from "@/Components/FormInputText/FormInputText"
-import { FormInputTextArea } from "@/Components/FormInputTextArea/FormInputTextArea"
-import { Popover } from "@/Components/Popover/Popover"
 import { submitFormAction } from "@/lib/form-actions"
 
 let isInitialized = false
