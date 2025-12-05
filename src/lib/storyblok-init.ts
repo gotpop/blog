@@ -2,7 +2,6 @@ import "server-only"
 
 import {
   withCardsData,
-  withCardsImageData,
   withFormBuilderData,
   withHeaderData,
   withNavData,
