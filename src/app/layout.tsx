@@ -2,6 +2,7 @@ import "@/lib/storyblok-init"
 import "@gotpop/system/styles"
 import { getConfig } from "@gotpop/storyblok"
 import { inter, monaspace } from "@gotpop/system/fonts"
+import "./theme.css"
 
 import type { Metadata } from "next"
 
