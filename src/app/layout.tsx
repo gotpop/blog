@@ -4,7 +4,15 @@ import { getConfig } from "@gotpop/storyblok"
 import { inter, monaspace } from "@gotpop/system/fonts"
 import "./theme.css"
 
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
+
+export function generateViewport(): Viewport {
+  return {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  }
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getConfig()
@@ -16,9 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: "/logo.svg",
     },
-    viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
     other: {
-      "theme-color": "#1a4a5c",
+      "theme-color": "#004642",
       "apple-mobile-web-app-status-bar-style": "default",
       "apple-mobile-web-app-capable": "yes",
     },
@@ -32,6 +39,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="theme-color"
+          content="#004642"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#004642"
+          media="(prefers-color-scheme: dark)"
+        />
+      </head>
       <body className={`${inter.variable} ${monaspace.variable} antialiased`}>
         {children}
       </body>
