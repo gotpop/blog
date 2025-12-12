@@ -16,6 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: "/logo.svg",
     },
+    other: {
+      "theme-color": "#1a4a5c", // Equivalent to oklab(0.3 -0.21 -0.03)
+      "apple-mobile-web-app-status-bar-style": "default",
+    },
   }
 }
 
