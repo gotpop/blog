@@ -27,7 +27,6 @@ export async function generateMetadata(): Promise<Metadata> {
     other: {
       "theme-color": "#004642",
       "apple-mobile-web-app-status-bar-style": "default",
-      "apple-mobile-web-app-capable": "yes",
     },
   }
 }
