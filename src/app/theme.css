@@ -1,3 +1,5 @@
 :root {
   --site-theme-color: #852abe;
+  --theme-accent: #852abe;
+  --theme-accent-text: #ffffff;
 }
