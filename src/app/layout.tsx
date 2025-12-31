@@ -49,7 +49,6 @@ export default function RootLayout({
           content="#004642"
           media="(prefers-color-scheme: dark)"
         />
-        <script src="/scripts/view-transitions.js" blocking="render" />
       </head>
       <body className={`${inter.variable} ${monaspace.variable} antialiased`}>
         {children}
