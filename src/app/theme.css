@@ -3,19 +3,3 @@
   --theme-accent: #852abe;
   --theme-accent-text: #ffffff;
 }
-
-[data-view-transition="post-1"] {
-  view-transition-name: post-1;
-}
-
-[data-view-transition="post-2"] {
-  view-transition-name: post-2;
-}
-
-[data-view-transition="post-3"] {
-  view-transition-name: post-3;
-}
-
-[data-view-transition="post-4"] {
-  view-transition-name: post-4;
-}
