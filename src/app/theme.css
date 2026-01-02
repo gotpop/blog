@@ -3,3 +3,73 @@
   --theme-accent: #852abe;
   --theme-accent-text: #ffffff;
 }
+
+@keyframes slide-to-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+html:active-view-transition-type(navigation-forward) {
+  .rich-text-block {
+    view-transition-name: rich-text-block;
+  }
+
+  &::view-transition-old(rich-text-block) {
+    animation-name: slide-to-right;
+  }
+  &::view-transition-new(rich-text-block) {
+    animation-name: slide-from-left;
+  }
+}
+
+html:active-view-transition-type(navigation-back) {
+  .rich-text-block {
+    view-transition-name: rich-text-block;
+  }
+
+  &::view-transition-old(rich-text-block) {
+    animation-name: slide-to-left;
+  }
+  &::view-transition-new(rich-text-block) {
+    animation-name: slide-from-right;
+  }
+}
