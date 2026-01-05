@@ -670,11 +670,12 @@
   dependencies:
     "@storyblok/react" "^5.0.0"
 
-"@gotpop/system@^0.1.285":
-  version "0.1.285"
-  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.285/d9135e0d5c579c2a76e018c5c059c7ea61ea1aad#d9135e0d5c579c2a76e018c5c059c7ea61ea1aad"
-  integrity sha512-n9sRsvtfL7ucAW8PRt9ObhafXC0R3jySbRo80x5A0BuLXaiDXD61qp1ACCIHM2EolIq7sLpp5hu7dSklekHAqA==
+"@gotpop/system@^0.1.286":
+  version "0.1.286"
+  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.286/f85c1db431f99bb20dbdfa7c5af3e4e64c4f9cb7#f85c1db431f99bb20dbdfa7c5af3e4e64c4f9cb7"
+  integrity sha512-2mUTBC86aMhdp8w2wDP+xjSnahY1U3uSHskbyBpVG6xN5Qg3vqCbxcGhmPx8whrw/vRLmQ0+5ZnA52ZhFCNnWQ==
   dependencies:
+    "@icons-pack/react-simple-icons" "^13.8.0"
     "@next/font" "^14.2.15"
     lucide-react "^0.469.0"
     motion "^12.23.26"
@@ -683,6 +684,11 @@
     server-only "^0.0.1"
     simple-icons "^16.3.0"
     storyblok-rich-text-react-renderer "^3.0.1"
+
+"@icons-pack/react-simple-icons@^13.8.0":
+  version "13.8.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-13.8.0.tgz#1118b9f9a85fe68514dfdad01945c74962d10a59"
+  integrity sha512-iZrhL1fSklfCCVn68IYHaAoKfcby3RakUTn2tRPyHBkhr2tkYqeQbjJWf+NizIYBzKBn2IarDJXmTdXd6CuEfw==
 
 "@img/colour@^1.0.0":
   version "1.0.0"
